@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Performance | Minqiu Sun</title>
+  <meta name="description" content="Performances, photos and notes by Minqiu Sun." />
+  <link rel="icon" type="image/png" href="https://github.com/SunMinqiu.png" />
+  <meta property="og:title" content="Performance | Minqiu Sun" />
+  <meta property="og:image" content="https://github.com/SunMinqiu.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{ --text:#14161a; --muted:#5c6472; --accent:#4c4ff5; --bg:#ffffff; --line:#e9edf2; --bar-h:60px; }
+    @media (prefers-color-scheme: dark){ :root{ --text:#eef0f3; --muted:#a7adba; --accent:#8aa2ff; --bg:#0c0d11; --line:#1c1f28; } }
+    html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;}
+    .container{max-width:980px; margin:0 auto; padding:calc(var(--bar-h) + 36px) 24px 80px;}
+    h1{font-size:42px; margin:0 0 6px;}
+    h2{font-size:28px; margin:24px 0 14px}
+    p{line-height:1.75; font-size:18px}
+    .topbar{position:fixed;top:0;left:0;right:0;height:var(--bar-h);display:flex;align-items:center;border-bottom:1px solid var(--line);backdrop-filter:saturate(120%) blur(8px);background:color-mix(in srgb, var(--bg) 86%, transparent); z-index:9999}
+    .navwrap{max-width:980px;margin:0 auto;width:100%;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{width:40px;height:40px;border-radius:10px;border:1px solid var(--line)}
+    .brand span{font-weight:800;font-size:18px}
+    .links{display:flex;gap:18px;flex-wrap:wrap}
+    .links a{color:var(--text);font-weight:600;text-decoration:none}
+    .links a:hover{text-decoration:underline}
+    @media (max-width:800px){ :root{--bar-h:54px} h1{font-size:34px} }
+
+    /* gallery */
+    .grid{display:grid;grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:18px}
+    .card{border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fff0;}
+    .thumb{aspect-ratio: 4/3; width:100%; object-fit:cover; display:block}
+    .cap{padding:10px 12px; font-size:15px; color:var(--muted)}
+    @media (max-width:900px){ .grid{grid-template-columns: repeat(2, 1fr);} }
+    @media (max-width:600px){ .grid{grid-template-columns: 1fr;} }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="navwrap">
+      <div class="brand">
+        <img src="https://github.com/SunMinqiu.png" alt="Minqiu Sun"/>
+        <span>Minqiu Sun</span>
+      </div>
+      <nav class="links">
+        <a href="/">Home</a>
+        <a href="/#publications">Publications</a>
+        <a href="/#awards">Awards</a>
+        <a href="/#service">Service</a>
+        <a href="https://www.linkedin.com/in/minqiu-sun-056304318" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="/cv/MinqiuSun_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="container">
+    <header>
+      <h1>Performance</h1>
+      <p>Photos and notes from band shows and performances. Replace the placeholders below with your own files in <code>/media</code>.</p>
+    </header>
+
+    <section class="grid">
+      <!-- 示例：将 src 改成你的图片路径，并可把整张卡片包上 <a> 链接到文章 -->
+      <div class="card">
+        <img class="thumb" src="/media/perf01.jpg" alt="Performance 01">
+        <div class="cap">Campus Music Festival · 2023-06 · NUIST</div>
+      </div>
+      <div class="card">
+        <img class="thumb" src="/media/perf02.jpg" alt="Performance 02">
+        <div class="cap">Livehouse Session · 2023-09</div>
+      </div>
+      <div class="card">
+        <img class="thumb" src="/media/perf03.jpg" alt="Performance 03">
+        <div class="cap">Band Rehearsal · 2022-12</div>
+      </div>
+      <div class="card">
+        <img class="thumb" src="/media/perf04.jpg" alt="Performance 04">
+        <div class="cap">Competition Showcase · 2022-05</div>
+      </div>
+      <div class="card">
+        <img class="thumb" src="/media/perf05.jpg" alt="Performance 05">
+        <div class="cap">Outdoor Stage · 2021-10</div>
+      </div>
+      <div class="card">
+        <img class="thumb" src="/media/perf06.jpg" alt="Performance 06">
+        <div class="cap">Acoustic Night · 2021-04</div>
+      </div>
+    </section>
+
+    <footer style="margin-top:56px;color:var(--muted)">Updated Nov 2025 · © Minqiu Sun</footer>
+  </main>
+</body>
+</html>
