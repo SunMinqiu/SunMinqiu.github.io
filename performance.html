@@ -71,14 +71,14 @@
     @media (max-width:600px){ .lightbox-close{top:10px; right:10px; width:36px; height:36px; font-size:20px} .lightbox-nav{width:40px; height:40px; font-size:20px} .lightbox-prev{left:10px} .lightbox-next{right:10px} }
     
     /* table of contents */
-    /* .toc{background:color-mix(in srgb, var(--accent) 8%, transparent); border:none; border-radius:16px; padding:24px 32px; margin:32px 0 48px; display:flex; flex-direction:column; gap:16px} */
+    .toc{background:transparent; border:none; border-radius:16px; padding:24px 32px; margin:56px 0 64px; display:flex; flex-direction:column; gap:16px}
     .toc-title{font-size:20px; font-weight:800; color:var(--text); margin:0 0 8px; display:flex; align-items:center; gap:10px}
     .toc-title::before{content:''; font-size:24px}
     .toc-links{display:flex; gap:24px; flex-wrap:wrap}
     .toc-link{display:inline-flex; align-items:center; padding:12px 24px; background:var(--bg); border:2px solid var(--line); border-radius:10px; color:var(--text); font-weight:600; font-size:16px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px color-mix(in srgb, var(--text) 4%, transparent)}
     .toc-link:hover{background:var(--accent); color:var(--bg); border-color:var(--accent); transform:translateY(-2px); box-shadow:0 4px 12px color-mix(in srgb, var(--accent) 30%, transparent); text-decoration:none}
     .toc-link::before{content:'→'; margin-right:8px; font-size:18px}
-    @media (max-width:600px){ .toc{padding:20px 24px; margin:24px 0 32px} .toc-title{font-size:18px} .toc-links{flex-direction:column; gap:12px} .toc-link{width:100%; justify-content:center} }
+    @media (max-width:600px){ .toc{padding:20px 24px; margin:40px 0 48px} .toc-title{font-size:18px} .toc-links{flex-direction:column; gap:12px} .toc-link{width:100%; justify-content:center} }
   </style>
 </head>
 <body>
@@ -117,32 +117,6 @@
     <section id="bands" class="gallery-section">
       <h2 class="section-title">My Bands Performances</h2>
 
-      <!-- Teetotalism -->
-      <section class="band-section">
-        <h2 class="band-title">Teetotalism · 绝对禁酒主义</h2>
-        <p class="band-subtitle">2023 - 2024</p>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="timeline-date">2024-04-20</span>
-            <div class="timeline-location">临江楼报告厅</div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/t1.jpeg" alt="Teetotalism Performance">
-              </div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">2023-11-18</span>
-            <div class="timeline-location">临江楼报告厅</div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/Teetotalism.jpg" alt="Teetotalism Performance">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- 夜渔 -->
       <section class="band-section">
         <h2 class="band-title">夜渔</h2>
@@ -163,6 +137,32 @@
             <div class="grid">
               <div class="card">
                 <img class="thumb" src="/assets/夜渔.jpg" alt="夜渔 Performance">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Teetotalism -->
+      <section class="band-section">
+        <h2 class="band-title">Teetotalism · 绝对禁酒主义</h2>
+        <p class="band-subtitle">2023 - 2024</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-date">2024-04-20</span>
+            <div class="timeline-location">临江楼报告厅</div>
+            <div class="grid">
+              <div class="card">
+                <img class="thumb" src="/assets/t1.jpeg" alt="Teetotalism Performance">
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">2023-11-18</span>
+            <div class="timeline-location">临江楼报告厅</div>
+            <div class="grid">
+              <div class="card">
+                <img class="thumb" src="/assets/Teetotalism.jpg" alt="Teetotalism Performance">
               </div>
             </div>
           </div>
