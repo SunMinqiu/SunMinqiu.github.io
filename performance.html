@@ -35,8 +35,9 @@
     
     /* gallery section */
     .gallery-section{margin:48px 0; scroll-margin-top:calc(var(--bar-h) + 12px)}
-    .section-title{font-size:32px; font-weight:800; margin:0 0 32px; color:var(--text); display:flex; align-items:center; gap:12px}
-    .section-title::before{content:''; width:4px; height:32px; background:var(--accent); border-radius:2px}
+    .section-title{font-size:40px; font-weight:800; margin:0 0 40px; color:var(--text); display:flex; align-items:center; gap:14px}
+    .section-title::before{content:''; width:5px; height:40px; background:var(--accent); border-radius:2px}
+    @media (max-width:600px){ .section-title{font-size:32px} .section-title::before{height:32px} }
     
     /* timeline */
     .timeline{position:relative; padding-left:32px; margin-top:24px}
@@ -70,7 +71,7 @@
     @media (max-width:600px){ .lightbox-close{top:10px; right:10px; width:36px; height:36px; font-size:20px} .lightbox-nav{width:40px; height:40px; font-size:20px} .lightbox-prev{left:10px} .lightbox-next{right:10px} }
     
     /* table of contents */
-    .toc{background:color-mix(in srgb, var(--accent) 8%, transparent); border:none; border-radius:16px; padding:24px 32px; margin:32px 0 48px; display:flex; flex-direction:column; gap:16px}
+    /* .toc{background:color-mix(in srgb, var(--accent) 8%, transparent); border:none; border-radius:16px; padding:24px 32px; margin:32px 0 48px; display:flex; flex-direction:column; gap:16px} */
     .toc-title{font-size:20px; font-weight:800; color:var(--text); margin:0 0 8px; display:flex; align-items:center; gap:10px}
     .toc-title::before{content:''; font-size:24px}
     .toc-links{display:flex; gap:24px; flex-wrap:wrap}
@@ -303,6 +304,7 @@
     <!-- Club Section -->
     <section id="club" class="gallery-section">
       <h2 class="section-title">Rock and Roll Club Activities</h2>
+
       <div class="grid">
         <div class="card">
           <img class="thumb" src="/assets/合影.jpg" alt="Club Activity">
