@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root{ --text:#14161a; --muted:#5c6472; --accent:#4c4ff5; --bg:#ffffff; --line:#e9edf2; --bar-h:60px; }
-    @media (prefers-color-scheme: dark){ :root{ --text:#eef0f3; --muted:#a7adba; --accent:#8aa2ff; --bg:#0c0d11; --line:#1c1f28; } }
+    :root{ --text:#14161a; --muted:#5c6472; --accent:#4c4ff5; --bg:#ffffff; --line:#e9edf2; --bar-h:70px; --topbar-bg:color-mix(in srgb, #e3f2fd 85%, var(--bg)); }
+    @media (prefers-color-scheme: dark){ :root{ --text:#eef0f3; --muted:#a7adba; --accent:#8aa2ff; --bg:#0c0d11; --line:#1c1f28; --topbar-bg:color-mix(in srgb, #1e3a5f 75%, var(--bg)); } }
     html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;}
     .container{max-width:980px; margin:0 auto; padding:calc(var(--bar-h) + 36px) 24px 80px;}
     h1{font-size:42px; letter-spacing:.2px; margin:0 0 6px;}
@@ -23,19 +23,21 @@
     a{color:var(--accent); text-decoration:none}
     a:hover{text-decoration:underline}
     h2{font-size:36px; margin:56px 0 18px; letter-spacing:.5px;}
+    section + section h2{margin-top:80px}
     p{line-height:1.75; font-size:18px; margin:0 0 18px;}
     ul{margin:0 0 18px 22px; font-size:18px;}
     li{margin:6px 0}
     /* simple top nav */
-    .topbar{position:fixed;top:0;left:0;right:0;height:var(--bar-h);display:flex;align-items:center;border-bottom:1px solid var(--line);backdrop-filter:saturate(120%) blur(8px);background:color-mix(in srgb, var(--bg) 86%, transparent); z-index:9999}
+    .topbar{position:fixed;top:0;left:0;right:0;height:var(--bar-h);display:flex;align-items:center;border-bottom:1px solid var(--line);backdrop-filter:saturate(120%) blur(8px);background:var(--topbar-bg); z-index:9999}
     .navwrap{max-width:980px;margin:0 auto;width:100%;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:10px}
     .brand img{width:40px;height:40px;border-radius:10px;border:1px solid var(--line)}
     .brand span{font-weight:800;font-size:18px}
     .links{display:flex;gap:18px;flex-wrap:wrap}
     .links a{color:var(--text);font-weight:600}
-    @media (max-width:800px){ h1{font-size:34px} h2{font-size:28px} .links{gap:12px;font-size:14px;overflow-x:auto;scrollbar-width:none} .links::-webkit-scrollbar{display:none} :root{--bar-h:54px} }
-    section{scroll-margin-top:calc(var(--bar-h) + 12px)}
+    @media (max-width:800px){ h1{font-size:34px} h2{font-size:28px} .links{gap:12px;font-size:14px;overflow-x:auto;scrollbar-width:none} .links::-webkit-scrollbar{display:none} :root{--bar-h:64px} }
+    section{scroll-margin-top:calc(var(--bar-h) + 12px); margin-bottom:48px}
+    section:last-of-type{margin-bottom:0}
   </style>
 </head>
 <body>
@@ -46,15 +48,13 @@
         <span>Minqiu Sun</span>
       </div>
       <nav class="links">
-        <a href="#research">Research</a>
         <a href="#publications">Publications</a>
-        <a href="#awards">Awards</a>
+        <!-- <a href="#awards">Awards</a> -->
         <a href="#teaching">Teaching</a>
         <a href="#service">Service</a>
         <a href="#experience">Experience</a>
         <a href="/cv/MinqiuSun_CV.pdf" target="_blank" rel="noopener">CV</a>
-        <a href="/performance.html">Performance</a>
-        <a href="/performance.html#club">Club</a>
+              <a href="/performance.html">Performance</a>
       </nav>
     </div>
   </div>
@@ -78,9 +78,9 @@
 
     <section id="publications">
       <h2>Publications</h2>
-      <p><b>Minqiu Sun</b>, Xin Huang, Luanzheng Guo, Nathan Tallent, Kento Sato, Dong Dai. <br/>
-      <b>LLMTailor: A Layer-wise Tailoring Tool for Efficient Checkpointing of Large Language Models.</b> <br/>
-      PDSW’25, in conjunction with SC’25.</p>
+      <p><b>PDSW'25, in conjunction with SC'25.</b> <br/>
+      <b>Minqiu Sun</b>, Xin Huang, Luanzheng Guo, Nathan Tallent, Kento Sato, Dong Dai. <br/>
+      LLMTailor: A Layer-wise Tailoring Tool for Efficient Checkpointing of Large Language Models. [<a href="https://github.com/SunMinqiu/LLMTailor" target="_blank" rel="noopener">Code</a>]</p>
 
     </section>
 
