@@ -17,11 +17,15 @@
     @media (prefers-color-scheme: dark){ :root{ --text:#eef0f3; --muted:#a7adba; --accent:#8aa2ff; --bg:#0c0d11; --line:#1c1f28; --topbar-bg:rgba(30, 58, 95, 0.5); } }
     html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;}
     .container{max-width:980px; margin:0 auto; padding:calc(var(--bar-h) + 36px) 24px 80px;}
+    header{display:flex; gap:32px; align-items:flex-start; margin-bottom:24px}
+    .header-photo{flex-shrink:0; width:180px; height:180px; border-radius:12px; object-fit:cover; border:2px solid var(--line); box-shadow:0 4px 12px color-mix(in srgb, var(--text) 8%, transparent)}
+    .header-content{flex:1}
     h1{font-size:42px; letter-spacing:.2px; margin:0 0 6px;}
     .subtitle{color:var(--muted); font-size:18px; margin:0 0 6px;}
     .email{margin:2px 0 24px;}
     a{color:var(--accent); text-decoration:none}
     a:hover{text-decoration:underline}
+    @media (max-width:600px){ header{flex-direction:column; gap:20px} .header-photo{width:120px; height:120px; align-self:center} }
     h2{font-size:36px; margin:56px 0 18px; letter-spacing:.5px;}
     section + section h2{margin-top:80px}
     p{line-height:1.75; font-size:18px; margin:0 0 18px;}
@@ -60,9 +64,12 @@
   </div>
   <main class="container">
     <header>
-      <h1>Minqiu Sun · 孙敏求</h1>
-      <p class="subtitle">Ph.D. Student · University of Delaware — Systems for AI, Large Language Models</p>
-      <p class="email"><a href="mailto:mqsun@udel.edu">mqsun@udel.edu</a> · Newark, DE · <a href="https://github.com/SunMinqiu" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/minqiu-sun-056304318" target="_blank" rel="noopener">LinkedIn</a></p>
+      <img src="/assets/20231120.jpg" alt="Minqiu Sun" class="header-photo">
+      <div class="header-content">
+        <h1>Minqiu Sun · 孙敏求</h1>
+        <p class="subtitle">Ph.D. Student · University of Delaware — Systems for AI, Large Language Models</p>
+        <p class="email"><a href="mailto:mqsun@udel.edu">mqsun@udel.edu</a> · Newark, DE · <a href="https://github.com/SunMinqiu" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/minqiu-sun-056304318" target="_blank" rel="noopener">LinkedIn</a></p>
+      </div>
     </header>
 
     <section id="about">
