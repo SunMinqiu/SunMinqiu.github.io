@@ -17,14 +17,14 @@
     h1{font-size:42px; margin:0 0 6px;}
     h2{font-size:28px; margin:24px 0 14px}
     p{line-height:1.75; font-size:18px}
-    .topbar{position:fixed;top:0;left:0;right:0;height:var(--bar-h);display:flex;align-items:center;border-bottom:1px solid var(--line);backdrop-filter:saturate(120%) blur(8px);background:var(--topbar-bg); z-index:9999}
+    .topbar{position:fixed;top:0;left:0;right:0;height:var(--bar-h);display:flex;align-items:center;border-bottom:1px solid rgba(255,225,210,.75);background:linear-gradient(115deg,#f97316 0%,#f0523d 52%,#dc3f32 100%);box-shadow:0 3px 12px rgba(168,55,31,.2);z-index:9999}
     .navwrap{max-width:980px;margin:0 auto;width:100%;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:10px}
-    .brand img{width:40px;height:40px;border-radius:10px;border:1px solid var(--line)}
-    .brand span{font-weight:800;font-size:18px}
+    .brand img{width:40px;height:40px;border-radius:10px;border:1px solid rgba(255,244,238,.8)}
+    .brand span{color:#fffaf7;font-weight:800;font-size:18px;text-shadow:0 1px 2px rgba(103,32,20,.25)}
     .links{display:flex;gap:18px;flex-wrap:wrap}
-    .links a{color:var(--text);font-weight:600;text-decoration:none}
-    .links a:hover{text-decoration:underline}
+    .links a{color:#fffaf7;font-weight:600;padding:7px 8px;border-radius:7px;text-decoration:none}
+    .links a:hover{background:rgba(255,244,238,.16);text-decoration:none}
     @media (max-width:800px){ :root{--bar-h:64px} h1{font-size:34px} }
 
     /* band section */
@@ -93,7 +93,6 @@
         <a href="/#publications">Publications</a>
         <a href="/#awards">Awards</a>
         <a href="/#service">Service</a>
-        <a href="https://www.linkedin.com/in/minqiu-sun-056304318" target="_blank" rel="noopener">LinkedIn</a>
         <a href="/cv/MinqiuSun_CV.pdf" target="_blank" rel="noopener">CV</a>
         <a href="/performance.html">Performance</a>
       </nav>
@@ -119,7 +118,7 @@
 
       <!-- 夜渔 -->
       <section class="band-section">
-        <h2 class="band-title">夜渔</h2>
+        <h2 class="band-title">夜渔 · Night Fishers</h2>
         <p class="band-subtitle">2024</p>
         <div class="timeline">
           <div class="timeline-item">
