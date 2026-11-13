@@ -8,456 +8,264 @@
   <link rel="icon" type="image/png" href="https://github.com/SunMinqiu.png" />
   <meta property="og:title" content="Performance | Minqiu Sun" />
   <meta property="og:image" content="https://github.com/SunMinqiu.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta property="og:url" content="https://sunminqiu.github.io/performance.html" />
+  <link rel="canonical" href="https://sunminqiu.github.io/performance.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
   <style>
-    :root{--text:#211915;--muted:#71645d;--accent:#e65332;--accent-dark:#bd3d27;--accent-soft:#fff0e8;--surface-warm:#fff7f3;--bg:#ffffff;--line:#eadfd9;--bar-h:70px}
-    html{scroll-behavior:smooth}
-    html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;}
-    .container{max-width:980px; margin:0 auto; padding:calc(var(--bar-h) + 36px) 24px 80px;}
-    h1{font-size:42px; margin:0 0 8px;}
-    h2{font-size:28px; margin:24px 0 14px}
-    p{line-height:1.75; font-size:18px}
-    .page-intro{max-width:680px;margin:0;color:var(--muted)}
-    .topbar{position:fixed;top:0;left:0;right:0;height:var(--bar-h);display:flex;align-items:center;border-bottom:1px solid rgba(255,225,210,.75);background:linear-gradient(115deg,#f97316 0%,#f0523d 52%,#dc3f32 100%);box-shadow:0 3px 12px rgba(168,55,31,.2);z-index:9999}
-    .navwrap{max-width:980px;margin:0 auto;width:100%;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand img{width:40px;height:40px;border-radius:10px;border:1px solid rgba(255,244,238,.8)}
-    .brand span{color:#fffaf7;font-weight:800;font-size:18px;text-shadow:0 1px 2px rgba(103,32,20,.25)}
-    .links{display:flex;gap:18px;flex-wrap:wrap}
-    .links a{color:#fffaf7;font-weight:600;padding:7px 8px;border-radius:7px;text-decoration:none}
-    .links a:hover{background:rgba(255,244,238,.16);text-decoration:none}
-    @media (max-width:800px){:root{--bar-h:64px}h1{font-size:34px}.links{gap:4px;font-size:13px;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.links a{padding:7px 6px}}
+    .title{display:flex;align-items:baseline;gap:14px;font-size:36px;font-weight:500;letter-spacing:.3px;margin:0 0 12px;line-height:1.2}
+    .title small{font-family:var(--cjk);font-size:15px;font-weight:400;letter-spacing:3px;color:var(--accent)}
+    .intro{color:var(--muted)}
+    .index{list-style:none;margin:20px 0 64px;padding:14px 0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);font-size:17px;line-height:1.7}
+    .index li{display:flex;gap:18px}
+    .index .k{flex-shrink:0;width:52px;color:var(--muted)}
+    .index a{white-space:nowrap}
 
-    /* band section */
-    #bands .band-section{margin:42px 0 54px}
-    #bands .band-heading{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:20px}
-    #bands .band-title{font-size:30px;font-weight:800;margin:0;color:var(--text)}
-    #bands .band-years{flex-shrink:0;color:var(--muted);font-size:15px;font-weight:600}
-    
-    /* gallery section */
-    .gallery-section{margin:48px 0;scroll-margin-top:calc(var(--bar-h) + 12px)}
-    .gallery-section + .gallery-section{padding-top:48px;border-top:1px solid var(--line)}
-    .section-title{font-size:40px; font-weight:800; margin:0 0 40px; color:var(--text); display:flex; align-items:center; gap:14px}
-    .section-title::before{content:''; width:5px; height:40px; background:var(--accent); border-radius:2px}
-    #bands > .section-title{display:block}
-    #bands > .section-title::before{display:none}
-    #bands > .section-title::after{content:'';display:block;width:52px;height:4px;margin-top:12px;border-radius:99px;background:var(--accent)}
-    @media (max-width:600px){ .section-title{font-size:32px} .section-title::before{height:32px} }
-    
-    /* band performances */
-    #bands .timeline{display:grid;gap:16px;margin-top:0}
-    #bands .timeline-item{padding:18px;border-radius:12px;background:var(--surface-warm)}
-    #bands .timeline-date{display:inline-block;color:var(--accent-dark);font-size:14px;font-weight:700}
-    #bands .timeline-location{display:inline-block;margin-left:8px;color:var(--muted);font-size:14px}
-    #bands .video-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    #bands .video-link{display:inline-flex;align-items:center;padding:6px 10px;border-radius:7px;background:var(--accent-soft);color:var(--accent-dark);font-size:14px;font-weight:600;text-decoration:none;transition:background .2s,color .2s,transform .2s}
-    #bands .video-link:hover{background:var(--accent);color:#fff;transform:translateY(-1px)}
-    
-    /* gallery */
-    .grid{display:grid;grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:12px}
-    .card{border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fff0; transition:transform 0.2s, box-shadow 0.2s}
-    .card:hover{transform:translateY(-2px); box-shadow:0 8px 24px color-mix(in srgb, var(--text) 8%, transparent)}
-    .thumb{aspect-ratio: 4/3; width:100%; object-fit:cover; display:block; cursor:pointer; transition:opacity 0.2s}
-    .thumb:hover{opacity:0.9}
-    .cap{padding:10px 12px; font-size:15px; color:var(--muted)}
-    @media (max-width:900px){ .grid{grid-template-columns: repeat(2, 1fr);} }
-    #bands .card{border:0;background:#fff}
-    #bands .card:hover{transform:translateY(-2px) scale(1.01)}
-    @media (max-width:600px){.grid{grid-template-columns:1fr}#bands .band-heading{align-items:flex-start;flex-direction:column;gap:4px}#bands .band-title{font-size:26px}#bands .timeline-item{padding:15px}}
-    
-    /* lightbox */
-    .lightbox{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:color-mix(in srgb, var(--bg) 95%, black); backdrop-filter:blur(8px); z-index:10000; justify-content:center; align-items:center; opacity:0; transition:opacity 0.3s}
-    .lightbox.active{display:flex; opacity:1}
-    .lightbox-content{position:relative; max-width:90vw; max-height:90vh; display:flex; align-items:center; justify-content:center}
-    .lightbox-img{max-width:100%; max-height:90vh; object-fit:contain; border-radius:8px; box-shadow:0 8px 32px color-mix(in srgb, var(--text) 40%, transparent)}
-    .lightbox-close{position:absolute; top:20px; right:20px; width:40px; height:40px; background:color-mix(in srgb, var(--bg) 90%, transparent); border:2px solid var(--line); border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:24px; color:var(--text); transition:all 0.2s; z-index:10001}
-    .lightbox-close:hover{background:var(--accent); color:var(--bg); border-color:var(--accent); transform:rotate(90deg)}
-    .lightbox-nav{position:absolute; top:50%; transform:translateY(-50%); width:50px; height:50px; background:color-mix(in srgb, var(--bg) 90%, transparent); border:2px solid var(--line); border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:24px; color:var(--text); transition:all 0.2s; z-index:10001}
-    .lightbox-nav:hover{background:var(--accent); color:var(--bg); border-color:var(--accent)}
-    .lightbox-prev{left:20px}
-    .lightbox-next{right:20px}
-    @media (max-width:600px){ .lightbox-close{top:10px; right:10px; width:36px; height:36px; font-size:20px} .lightbox-nav{width:40px; height:40px; font-size:20px} .lightbox-prev{left:10px} .lightbox-next{right:10px} }
-    
-    /* table of contents */
-    .toc{margin:30px 0 54px}
-    .toc-links{display:flex;gap:10px;flex-wrap:wrap}
-    .toc-link{display:inline-flex;align-items:center;padding:9px 14px;border-radius:8px;background:var(--accent-soft);color:var(--accent-dark);font-size:15px;font-weight:600;text-decoration:none;transition:background .2s,color .2s,transform .2s}
-    .toc-link:hover{background:var(--accent);color:#fff;transform:translateY(-1px);text-decoration:none}
-    .toc-link::after{content:'↓';margin-left:8px}
-    @media (max-width:600px){.toc{margin:24px 0 42px}.toc-links{gap:8px}.toc-link{font-size:14px}}
+    .band{margin:0 0 48px}
+    .band:last-child{margin-bottom:0}
+    .band-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:0 0 4px;scroll-margin-top:40px}
+    .band-head h3{font-size:22px;font-weight:500;margin:0;letter-spacing:.2px}
+    .yrs{flex-shrink:0;color:var(--muted);font-size:15.5px;font-variant-numeric:oldstyle-nums}
+    .show{display:grid;grid-template-columns:118px minmax(0,1fr);gap:20px;padding:16px 0;border-bottom:1px solid var(--line-soft)}
+    .show:last-child{border-bottom:0}
+    .date{display:block;color:var(--accent);font-size:15.5px;letter-spacing:.4px}
+    .loc{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+    .videos{font-size:16px;margin:0 0 10px;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .club .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .frame{padding:4px;border:1px solid var(--line);transition:border-color .2s}
+    .frame:hover{border-color:var(--muted)}
+    .thumb{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;cursor:zoom-in}
+
+    .lightbox{display:none;position:fixed;inset:0;background:color-mix(in srgb,var(--paper) 96%,transparent);z-index:100;justify-content:center;align-items:center}
+    .lightbox.active{display:flex}
+    .lightbox-img{max-width:min(88vw,1100px);max-height:84vh;object-fit:contain;padding:6px;border:1px solid var(--line);background:var(--paper)}
+    .lb-btn{position:absolute;width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:var(--paper);border:1px solid var(--line);color:var(--ink);font:400 24px/1 var(--serif);cursor:pointer;transition:border-color .2s,color .2s}
+    .lb-btn:hover{border-color:var(--accent);color:var(--accent)}
+    .lb-close{top:20px;right:20px}
+    .lb-prev{left:20px;top:50%;transform:translateY(-50%)}
+    .lb-next{right:20px;top:50%;transform:translateY(-50%)}
+
+    @media (max-width:560px){
+      .title{font-size:30px}
+      .index li{flex-direction:column;gap:0}
+      .index li + li{margin-top:8px}
+      .band-head{flex-direction:column;gap:2px}
+      .show{grid-template-columns:1fr;gap:8px}
+      .show .frame:only-child{grid-column:1/-1}
+      .date,.loc{display:inline;margin:0 8px 0 0}
+      .club .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .lb-close{top:10px;right:10px}
+      .lb-prev{left:10px}
+      .lb-next{right:10px}
+    }
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="navwrap">
-      <div class="brand">
-        <img src="https://github.com/SunMinqiu.png" alt="Minqiu Sun"/>
-        <span>Minqiu Sun</span>
+  <div class="page">
+    <aside class="side">
+      <div class="portrait">
+        <div class="photo"><div><img src="/assets/20231120.jpg" alt="Minqiu Sun"></div></div>
+        <p class="cn-name" lang="zh">孙敏求</p>
       </div>
-      <nav class="links">
-        <a href="/">Home</a>
-        <a href="/#publications">Publications</a>
-        <a href="/#awards">Awards</a>
-        <a href="/#service">Service</a>
-        <a href="/cv/MinqiuSun_CV.pdf" target="_blank" rel="noopener">CV</a>
-        <a href="/performance.html">Performance</a>
-      </nav>
-    </div>
+      <p class="name"><a href="/">Minqiu Sun</a></p>
+      <p class="role">Ph.D. Student<br/>University of Delaware</p>
+      <p class="contact">
+        <a href="mailto:mqsun@udel.edu">mqsun@udel.edu</a><br/>
+        <span>Newark, DE</span><br/>
+        <a href="https://github.com/SunMinqiu" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/minqiu-sun-056304318" target="_blank" rel="noopener">LinkedIn</a> · <a href="/assets/MinqiuSun_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </p>
+      <ul class="nav">
+        <li><a href="/#about">Biography <small>简介</small></a></li>
+        <li><a href="/#publications">Publications <small>发表</small></a></li>
+        <li><a href="/#awards">Awards <small>获奖</small></a></li>
+        <li><a href="/#teaching">Teaching <small>教学</small></a></li>
+        <li><a href="/#service">Service <small>服务</small></a></li>
+        <li><a href="/#experience">Experience <small>履历</small></a></li>
+        <li class="sep" aria-hidden="true"></li>
+        <li><a href="/performance.html" class="on" aria-current="page">Performance <small>演出</small></a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <h1 class="title">Performance <small>演出</small></h1>
+      <p class="intro">Bands, stages, and memories from my years of playing live music.</p>
+      <ul class="index">
+        <li><span class="k">Bands</span><span><a href="#yeyu">夜渔</a> · <a href="#teetotalism">Teetotalism</a> · <a href="#jiuwan">玖万</a> · <a href="#xiaoguaishou">小怪兽</a> · <a href="#linghao">零号乐队</a> · <a href="#xingxing">行星回响</a></span></li>
+        <li><span class="k">Club</span><span><a href="#club">Rock and Roll Club Activities</a></span></li>
+      </ul>
+
+      <section id="bands">
+        <h2>My Bands Performances <small>乐队</small></h2>
+
+        <article class="band">
+          <div class="band-head" id="yeyu"><h3>夜渔 · Night Fishers</h3><span class="yrs">2024</span></div>
+          <div class="show">
+            <div><span class="date">2024-06-09</span><span class="loc">梅园新村社区</span></div>
+            <div><div class="grid"><div class="frame"><img class="thumb" src="/assets/端午.jpg" alt="夜渔 Performance"></div></div></div>
+          </div>
+          <div class="show">
+            <div><span class="date">2024-04-20</span><span class="loc">临江楼报告厅</span></div>
+            <div>
+              <p class="videos"><a href="https://www.bilibili.com/video/BV1Dm421j7ox/" target="_blank" rel="noopener">Video ↗</a></p>
+              <div class="grid"><div class="frame"><img class="thumb" src="/assets/夜渔.jpg" alt="夜渔 Performance"></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="band">
+          <div class="band-head" id="teetotalism"><h3>Teetotalism · 绝对禁酒主义</h3><span class="yrs">2023–2024</span></div>
+          <div class="show">
+            <div><span class="date">2024-04-20</span><span class="loc">临江楼报告厅</span></div>
+            <div>
+              <p class="videos"><a href="https://www.bilibili.com/video/BV1ym421W7s4/" target="_blank" rel="noopener">Video 1 ↗</a> · <a href="https://www.bilibili.com/video/BV1Bx4y1675j/" target="_blank" rel="noopener">Video 2 ↗</a> · <a href="https://www.bilibili.com/video/BV1yu4m1F78A/" target="_blank" rel="noopener">Video 3 ↗</a> · <a href="https://www.bilibili.com/video/BV1Mz421k7eB/" target="_blank" rel="noopener">Video 4 ↗</a></p>
+              <div class="grid"><div class="frame"><img class="thumb" src="/assets/t1.jpeg" alt="Teetotalism Performance"></div></div>
+            </div>
+          </div>
+          <div class="show">
+            <div><span class="date">2023-11-18</span><span class="loc">临江楼报告厅</span></div>
+            <div><div class="grid"><div class="frame"><img class="thumb" src="/assets/Teetotalism.jpg" alt="Teetotalism Performance"></div></div></div>
+          </div>
+        </article>
+
+        <article class="band">
+          <div class="band-head" id="jiuwan"><h3>玖万</h3><span class="yrs">2022–2023</span></div>
+          <div class="show">
+            <div><span class="date">2023-05-30</span><span class="loc">誌四季书店</span></div>
+            <div><div class="grid"><div class="frame"><img class="thumb" src="/assets/玖万2.jpg" alt="玖万 Performance"></div></div></div>
+          </div>
+          <div class="show">
+            <div><span class="date">2023-03-12</span><span class="loc">誌四季书店</span></div>
+            <div>
+              <p class="videos"><a href="https://www.bilibili.com/video/BV1J84y1A7tR/" target="_blank" rel="noopener">Video ↗</a></p>
+              <div class="grid"><div class="frame"><img class="thumb" src="/assets/玖万.jpg" alt="玖万 Performance"></div></div>
+            </div>
+          </div>
+          <div class="show">
+            <div><span class="date">2022-10-22</span><span class="loc">中苑大操场</span></div>
+            <div>
+              <p class="videos"><a href="https://www.bilibili.com/video/BV1ER4y197N1/" target="_blank" rel="noopener">Video 1 ↗</a> · <a href="https://www.bilibili.com/video/BV1We4y1U7MG/" target="_blank" rel="noopener">Video 2 ↗</a> · <a href="https://www.bilibili.com/video/BV14t4y1u76N/" target="_blank" rel="noopener">Video 3 ↗</a></p>
+              <div class="grid"><div class="frame"><img class="thumb" src="/assets/玖万1.jpeg" alt="玖万 Performance"></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="band">
+          <div class="band-head" id="xiaoguaishou"><h3>小怪兽 · Little Monster</h3><span class="yrs">2022</span></div>
+          <div class="show">
+            <div><span class="date">2022-05-21</span><span class="loc">南气宾馆</span></div>
+            <div>
+              <p class="videos"><a href="https://www.bilibili.com/video/BV1gY411F7th/" target="_blank" rel="noopener">Video ↗</a></p>
+              <div class="grid">
+                <div class="frame"><img class="thumb" src="/assets/小怪兽.jpg" alt="小怪兽 Performance"></div>
+                <div class="frame"><img class="thumb" src="/assets/小怪兽1.jpg" alt="小怪兽 Performance"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="band">
+          <div class="band-head" id="linghao"><h3>零号乐队 · Zero Band</h3><span class="yrs">2021–2022</span></div>
+          <div class="show">
+            <div><span class="date">2022-06-06</span><span class="loc">天鹅湖</span></div>
+            <div>
+              <p class="videos"><a href="https://www.bilibili.com/video/BV1CT411b7Zv/" target="_blank" rel="noopener">Video 1 ↗</a> · <a href="https://www.bilibili.com/video/BV19P411y76f/" target="_blank" rel="noopener">Video 2 ↗</a></p>
+              <div class="grid"><div class="frame"><img class="thumb" src="/assets/零号3.jpeg" alt="零号乐队 Performance"></div></div>
+            </div>
+          </div>
+          <div class="show">
+            <div><span class="date">2021-11-30</span><span class="loc">大活天井</span></div>
+            <div>
+              <p class="videos"><a href="https://www.bilibili.com/video/BV19q4y197pC/" target="_blank" rel="noopener">Video ↗</a></p>
+              <div class="grid"><div class="frame"><img class="thumb" src="/assets/零号2.jpeg" alt="零号乐队 Performance"></div></div>
+            </div>
+          </div>
+          <div class="show">
+            <div><span class="date">2021-06-11</span><span class="loc">大活二楼小剧场</span></div>
+            <div>
+              <p class="videos"><a href="https://www.bilibili.com/video/BV1Xw411d7bN/" target="_blank" rel="noopener">Video ↗</a></p>
+              <div class="grid">
+                <div class="frame"><img class="thumb" src="/assets/零号.jpg" alt="零号乐队 Performance"></div>
+                <div class="frame"><img class="thumb" src="/assets/零号1.jpeg" alt="零号乐队 Performance"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="band">
+          <div class="band-head" id="xingxing"><h3>行星回响 · Planet Echo</h3><span class="yrs">2020–2021</span></div>
+          <div class="show">
+            <div><span class="date">2021-10-23</span><span class="loc">风云赛场</span></div>
+            <div><div class="grid"><div class="frame"><img class="thumb" src="/assets/行星3.jpeg" alt="行星回响 Performance"></div></div></div>
+          </div>
+          <div class="show">
+            <div><span class="date">2021-03-28</span><span class="loc">灵犀乐社</span></div>
+            <div><div class="grid"><div class="frame"><img class="thumb" src="/assets/行星2.jpeg" alt="行星回响 Performance"></div></div></div>
+          </div>
+          <div class="show">
+            <div><span class="date">2020-12-12</span><span class="loc">风云剧场</span></div>
+            <div>
+              <div class="grid">
+                <div class="frame"><img class="thumb" src="/assets/行星.jpeg" alt="行星回响 Performance"></div>
+                <div class="frame"><img class="thumb" src="/assets/行星1.jpeg" alt="行星回响 Performance"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="club" class="club">
+        <h2>Rock and Roll Club Activities <small>社团</small></h2>
+        <div class="grid">
+          <div class="frame"><img class="thumb" src="/assets/合影.jpg" alt="Club Activity"></div>
+          <div class="frame"><img class="thumb" src="/assets/合影1.jpeg" alt="Club Activity"></div>
+          <div class="frame"><img class="thumb" src="/assets/招新.jpg" alt="Club Activity"></div>
+          <div class="frame"><img class="thumb" src="/assets/晚会.jpg" alt="Club Activity"></div>
+          <div class="frame"><img class="thumb" src="/assets/毕业.jpg" alt="Club Activity"></div>
+          <div class="frame"><img class="thumb" src="/assets/济南.jpg" alt="Club Activity"></div>
+          <div class="frame"><img class="thumb" src="/assets/马拉松.jpg" alt="Club Activity"></div>
+        </div>
+      </section>
+
+      <footer>Updated Nov 2026 · © Minqiu Sun</footer>
+    </main>
   </div>
 
-  <main class="container">
-    <header>
-      <h1>My Performances Area</h1>
-      <p class="page-intro">Bands, stages, and memories from my years of playing live music.</p>
-    </header>
-
-    <!-- Table of Contents -->
-    <nav class="toc">
-      <div class="toc-links">
-        <a href="#bands" class="toc-link">My Bands Performances</a>
-        <a href="#club" class="toc-link">Rock and Roll Club Activities</a>
-      </div>
-    </nav>
-
-    <section id="bands" class="gallery-section">
-      <h2 class="section-title">My Bands Performances</h2>
-
-      <!-- 夜渔 -->
-      <section class="band-section">
-        <div class="band-heading">
-          <h2 class="band-title">夜渔 · Night Fishers</h2>
-          <span class="band-years">2024</span>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="timeline-date">2024-06-09</span>
-            <div class="timeline-location">梅园新村社区</div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/端午.jpg" alt="夜渔 Performance">
-              </div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">2024-04-20</span>
-            <div class="timeline-location">临江楼报告厅</div>
-            <div class="video-links">
-              <a class="video-link" href="https://www.bilibili.com/video/BV1Dm421j7ox/" target="_blank" rel="noopener">Video ↗</a>
-            </div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/夜渔.jpg" alt="夜渔 Performance">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Teetotalism -->
-      <section class="band-section">
-        <div class="band-heading">
-          <h2 class="band-title">Teetotalism · 绝对禁酒主义</h2>
-          <span class="band-years">2023–2024</span>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="timeline-date">2024-04-20</span>
-            <div class="timeline-location">临江楼报告厅</div>
-            <div class="video-links">
-              <a class="video-link" href="https://www.bilibili.com/video/BV1ym421W7s4/" target="_blank" rel="noopener">Video 1 ↗</a>
-              <a class="video-link" href="https://www.bilibili.com/video/BV1Bx4y1675j/" target="_blank" rel="noopener">Video 2 ↗</a>
-              <a class="video-link" href="https://www.bilibili.com/video/BV1yu4m1F78A/" target="_blank" rel="noopener">Video 3 ↗</a>
-              <a class="video-link" href="https://www.bilibili.com/video/BV1Mz421k7eB/" target="_blank" rel="noopener">Video 4 ↗</a>
-            </div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/t1.jpeg" alt="Teetotalism Performance">
-              </div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">2023-11-18</span>
-            <div class="timeline-location">临江楼报告厅</div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/Teetotalism.jpg" alt="Teetotalism Performance">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 玖万 -->
-      <section class="band-section">
-        <div class="band-heading">
-          <h2 class="band-title">玖万</h2>
-          <span class="band-years">2022–2023</span>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="timeline-date">2023-05-30</span>
-            <div class="timeline-location">誌四季书店</div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/玖万2.jpg" alt="玖万 Performance">
-              </div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">2023-03-12</span>
-            <div class="timeline-location">誌四季书店</div>
-            <div class="video-links">
-              <a class="video-link" href="https://www.bilibili.com/video/BV1J84y1A7tR/" target="_blank" rel="noopener">Video ↗</a>
-            </div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/玖万.jpg" alt="玖万 Performance">
-              </div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">2022-10-22</span>
-            <div class="timeline-location">中苑大操场</div>
-            <div class="video-links">
-              <a class="video-link" href="https://www.bilibili.com/video/BV1ER4y197N1/" target="_blank" rel="noopener">Video 1 ↗</a>
-              <a class="video-link" href="https://www.bilibili.com/video/BV1We4y1U7MG/" target="_blank" rel="noopener">Video 2 ↗</a>
-              <a class="video-link" href="https://www.bilibili.com/video/BV14t4y1u76N/" target="_blank" rel="noopener">Video 3 ↗</a>
-            </div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/玖万1.jpeg" alt="玖万 Performance">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 小怪兽 -->
-      <section class="band-section">
-        <div class="band-heading">
-          <h2 class="band-title">小怪兽 · Little Monster</h2>
-          <span class="band-years">2022</span>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="timeline-date">2022-05-21</span>
-            <div class="timeline-location">南气宾馆</div>
-            <div class="video-links">
-              <a class="video-link" href="https://www.bilibili.com/video/BV1gY411F7th/" target="_blank" rel="noopener">Video ↗</a>
-            </div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/小怪兽.jpg" alt="小怪兽 Performance">
-              </div>
-              <div class="card">
-                <img class="thumb" src="/assets/小怪兽1.jpg" alt="小怪兽 Performance">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 零号乐队 -->
-      <section class="band-section">
-        <div class="band-heading">
-          <h2 class="band-title">零号乐队 · Zero Band</h2>
-          <span class="band-years">2021–2022</span>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="timeline-date">2022-06-06</span>
-            <div class="timeline-location">天鹅湖</div>
-            <div class="video-links">
-              <a class="video-link" href="https://www.bilibili.com/video/BV1CT411b7Zv/" target="_blank" rel="noopener">Video 1 ↗</a>
-              <a class="video-link" href="https://www.bilibili.com/video/BV19P411y76f/" target="_blank" rel="noopener">Video 2 ↗</a>
-            </div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/零号3.jpeg" alt="零号乐队 Performance">
-              </div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">2021-11-30</span>
-            <div class="timeline-location">大活天井</div>
-            <div class="video-links">
-              <a class="video-link" href="https://www.bilibili.com/video/BV19q4y197pC/" target="_blank" rel="noopener">Video ↗</a>
-            </div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/零号2.jpeg" alt="零号乐队 Performance">
-              </div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">2021-06-11</span>
-            <div class="timeline-location">大活二楼小剧场</div>
-            <div class="video-links">
-              <a class="video-link" href="https://www.bilibili.com/video/BV1Xw411d7bN/" target="_blank" rel="noopener">Video ↗</a>
-            </div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/零号.jpg" alt="零号乐队 Performance">
-              </div>
-              <div class="card">
-                <img class="thumb" src="/assets/零号1.jpeg" alt="零号乐队 Performance">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 行星回响 -->
-      <section class="band-section">
-        <div class="band-heading">
-          <h2 class="band-title">行星回响 · Planet Echo</h2>
-          <span class="band-years">2020–2021</span>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="timeline-date">2021-10-23</span>
-            <div class="timeline-location">风云赛场</div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/行星3.jpeg" alt="行星回响 Performance">
-              </div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">2021-03-28</span>
-            <div class="timeline-location">灵犀乐社</div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/行星2.jpeg" alt="行星回响 Performance">
-              </div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">2020-12-12</span>
-            <div class="timeline-location">风云剧场</div>
-            <div class="grid">
-              <div class="card">
-                <img class="thumb" src="/assets/行星.jpeg" alt="行星回响 Performance">
-              </div>
-              <div class="card">
-                <img class="thumb" src="/assets/行星1.jpeg" alt="行星回响 Performance">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
-
-    <!-- Club Section -->
-    <section id="club" class="gallery-section">
-      <h2 class="section-title">Rock and Roll Club Activities</h2>
-
-      <div class="grid">
-        <div class="card">
-          <img class="thumb" src="/assets/合影.jpg" alt="Club Activity">
-        </div>
-        <div class="card">
-          <img class="thumb" src="/assets/合影1.jpeg" alt="Club Activity">
-        </div>
-        <div class="card">
-          <img class="thumb" src="/assets/招新.jpg" alt="Club Activity">
-        </div>
-        <div class="card">
-          <img class="thumb" src="/assets/晚会.jpg" alt="Club Activity">
-        </div>
-        <div class="card">
-          <img class="thumb" src="/assets/毕业.jpg" alt="Club Activity">
-        </div>
-        <div class="card">
-          <img class="thumb" src="/assets/济南.jpg" alt="Club Activity">
-        </div>
-        <div class="card">
-          <img class="thumb" src="/assets/马拉松.jpg" alt="Club Activity">
-        </div>
-      </div>
-    </section>
-
-    <footer style="margin-top:56px;color:var(--muted)">Updated Nov 2025 · © Minqiu Sun</footer>
-  </main>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <div class="lightbox-content">
-      <button class="lightbox-close" onclick="closeLightbox()">×</button>
-      <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">‹</button>
-      <img id="lightbox-img" class="lightbox-img" src="" alt="">
-      <button class="lightbox-nav lightbox-next" onclick="changeImage(1)">›</button>
-    </div>
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button type="button" class="lb-btn lb-close" aria-label="Close">×</button>
+    <button type="button" class="lb-btn lb-prev" aria-label="Previous photo">‹</button>
+    <img id="lightbox-img" class="lightbox-img" alt="">
+    <button type="button" class="lb-btn lb-next" aria-label="Next photo">›</button>
   </div>
 
   <script>
-    let currentImages = [];
-    let currentIndex = 0;
-
-    // 收集所有图片
-    function initLightbox() {
-      const images = document.querySelectorAll('.thumb');
-      images.forEach((img, index) => {
-        img.addEventListener('click', () => openLightbox(index));
-        img.style.cursor = 'pointer';
+    (function(){
+      var images=[].slice.call(document.querySelectorAll('.thumb'));
+      var box=document.getElementById('lightbox');
+      var big=document.getElementById('lightbox-img');
+      var idx=0;
+      function show(i){
+        idx=(i+images.length)%images.length;
+        big.src=images[idx].src;
+        big.alt=images[idx].alt;
+      }
+      function open(i){show(i);box.classList.add('active');box.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+      function close(){box.classList.remove('active');box.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+      images.forEach(function(img,i){img.addEventListener('click',function(){open(i)})});
+      box.querySelector('.lb-close').addEventListener('click',close);
+      box.querySelector('.lb-prev').addEventListener('click',function(){show(idx-1)});
+      box.querySelector('.lb-next').addEventListener('click',function(){show(idx+1)});
+      box.addEventListener('click',function(e){if(e.target===box)close()});
+      document.addEventListener('keydown',function(e){
+        if(!box.classList.contains('active'))return;
+        if(e.key==='Escape')close();
+        else if(e.key==='ArrowLeft')show(idx-1);
+        else if(e.key==='ArrowRight')show(idx+1);
       });
-      currentImages = Array.from(images);
-    }
-
-    // 打开lightbox
-    function openLightbox(index) {
-      currentIndex = index;
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightbox-img');
-      lightboxImg.src = currentImages[currentIndex].src;
-      lightboxImg.alt = currentImages[currentIndex].alt;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    // 关闭lightbox
-    function closeLightbox() {
-      const lightbox = document.getElementById('lightbox');
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    // 切换图片
-    function changeImage(direction) {
-      currentIndex += direction;
-      if (currentIndex < 0) {
-        currentIndex = currentImages.length - 1;
-      } else if (currentIndex >= currentImages.length) {
-        currentIndex = 0;
-      }
-      const lightboxImg = document.getElementById('lightbox-img');
-      lightboxImg.src = currentImages[currentIndex].src;
-      lightboxImg.alt = currentImages[currentIndex].alt;
-    }
-
-    // 键盘导航
-    document.addEventListener('keydown', (e) => {
-      const lightbox = document.getElementById('lightbox');
-      if (!lightbox.classList.contains('active')) return;
-      
-      if (e.key === 'Escape') {
-        closeLightbox();
-      } else if (e.key === 'ArrowLeft') {
-        changeImage(-1);
-      } else if (e.key === 'ArrowRight') {
-        changeImage(1);
-      }
-    });
-
-    // 点击背景关闭
-    document.getElementById('lightbox').addEventListener('click', (e) => {
-      if (e.target.id === 'lightbox') {
-        closeLightbox();
-      }
-    });
-
-    // 初始化
-    document.addEventListener('DOMContentLoaded', initLightbox);
+    })();
   </script>
 </body>
 </html>

@@ -10,155 +10,173 @@
   <meta property="og:description" content="Ph.D. Student · University of Delaware — Systems for AI, Large Language Models" />
   <meta property="og:image" content="https://github.com/SunMinqiu.png" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sunminqiu.github.io/" />
+  <link rel="canonical" href="https://sunminqiu.github.io/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Minqiu Sun",
+    "alternateName": "孙敏求",
+    "url": "https://sunminqiu.github.io/",
+    "image": "https://sunminqiu.github.io/assets/20231120.jpg",
+    "jobTitle": "Ph.D. Student",
+    "affiliation": {"@type": "CollegeOrUniversity", "name": "University of Delaware"},
+    "email": "mailto:mqsun@udel.edu",
+    "knowsAbout": ["Systems for AI", "Large Language Models", "LLM checkpointing", "Fault tolerance"],
+    "sameAs": ["https://github.com/SunMinqiu", "https://www.linkedin.com/in/minqiu-sun-056304318"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
   <style>
-    :root{--text:#17212b;--muted:#66727f;--accent:#1976a3;--ocean:#348aad;--ocean-light:#67b6d2;--silver:#dce2e7;--bg:#ffffff;--surface:#f3f6f8;--line:#dce3e8;--bar-h:70px}
-    html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;}
-    .container{max-width:980px; margin:0 auto; padding:calc(var(--bar-h) + 36px) 24px 80px;}
-    header{display:flex; gap:32px; align-items:flex-start; margin-bottom:24px}
-    .header-photo{flex-shrink:0; width:180px; height:180px; border-radius:12px; object-fit:cover; border:2px solid var(--line); box-shadow:0 4px 12px color-mix(in srgb, var(--text) 8%, transparent)}
-    .header-content{flex:1}
-    h1{font-size:42px; letter-spacing:.2px; margin:0 0 6px;}
-    .subtitle{color:var(--muted); font-size:18px; margin:0 0 6px;}
-    .email{margin:2px 0 24px;}
-    a{color:var(--accent); text-decoration:none}
-    a:hover{text-decoration:underline}
-    h2{font-size:32px; margin:0 0 24px; letter-spacing:.3px;}
-    h2::after{content:"";display:block;width:44px;height:4px;margin-top:10px;border-radius:99px;background:var(--ocean-light)}
-    p{line-height:1.75; font-size:18px; margin:0 0 18px;}
-    ul{font-size:18px}
-    .topbar{position:fixed;top:0;left:0;right:0;height:var(--bar-h);display:flex;align-items:center;border-bottom:1px solid rgba(220,226,231,.82);background:linear-gradient(115deg,var(--ocean) 0%,var(--ocean-light) 52%,var(--ocean) 100%);box-shadow:0 3px 12px rgba(30,103,137,.18);z-index:9999}
-    .navwrap{max-width:980px;margin:0 auto;width:100%;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand img{width:40px;height:40px;border-radius:10px;border:1px solid rgba(235,240,244,.75)}
-    .brand span{color:#f7f9fb;font-weight:800;font-size:18px;text-shadow:0 1px 2px rgba(0,0,0,.25)}
-    .links{display:flex;gap:18px;flex-wrap:wrap}
-    .links a{color:#f1f4f7;font-weight:600;padding:7px 8px;border-radius:7px}
-    .links a:hover{background:rgba(220,226,231,.16);text-decoration:none}
-    section{scroll-margin-top:calc(var(--bar-h) + 12px);margin-top:52px;padding-top:42px;border-top:1px solid var(--line)}
-    section:last-of-type{margin-bottom:0}
-    .publication{display:grid;grid-template-columns:150px minmax(0,1fr);gap:22px;padding:22px 24px;margin-bottom:14px;border-radius:12px;background:var(--surface)}
-    .venue{align-self:start;width:max-content;max-width:100%;padding:6px 10px;border-radius:7px;background:var(--ocean);color:#f5f7f9;font-size:15px;font-weight:600;line-height:1.4;letter-spacing:.4px}
-    .publication h3{font-size:19px;line-height:1.45;margin:0 0 8px}
-    .publication .authors{color:var(--muted);font-size:16px;line-height:1.55;margin:0}
-    .publication .authors b{color:var(--text)}
-    .code-link{white-space:nowrap;font-size:15px;font-weight:600}
-    #awards ul{list-style:none;margin:0;padding:0}
-    #awards li,#teaching p,#service p,#experience p{margin:0 0 12px;padding:16px 18px;border-radius:10px;background:var(--surface);font-size:17px;line-height:1.65}
-    #experience h2:not(:first-child){margin-top:32px;font-size:24px}
-    #experience h2:not(:first-child)::after{height:3px}
-    footer{padding-top:30px;border-top:1px solid var(--line)}
-    @media (max-width:800px){:root{--bar-h:64px}h1{font-size:34px}h2{font-size:28px}.links{gap:4px;font-size:13px;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.links a{padding:7px 6px}.publication{grid-template-columns:1fr;gap:12px}}
-    @media (max-width:600px){.container{padding-left:18px;padding-right:18px}header{flex-direction:column;gap:20px}.header-photo{width:120px;height:120px;align-self:center}.brand span{display:none}.publication{padding:18px}section{margin-top:42px;padding-top:34px}}
+    h3.sub{font-size:15px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:28px 0 4px}
+    .pub{display:grid;grid-template-columns:118px minmax(0,1fr);gap:20px;padding:18px 0;border-bottom:1px solid var(--line-soft)}
+    .pub:last-child{border-bottom:0}
+    .venue{color:var(--accent);font-size:15.5px;font-weight:500;letter-spacing:.6px;line-height:1.5;padding-top:2px}
+    .pub h3{font-size:19.5px;font-weight:500;line-height:1.4;margin:0 0 6px}
+    .pub .authors{color:var(--muted);font-size:16.5px;line-height:1.55;margin:0}
+    .pub .authors b{color:var(--ink);font-weight:500}
+    .code{font-size:15px;font-weight:400;white-space:nowrap}
+    .rows{list-style:none;margin:0;padding:0}
+    .rows li{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:13px 0;border-bottom:1px solid var(--line-soft);font-size:18px;line-height:1.6}
+    .rows li:last-child{border-bottom:0}
+    .rows .what{min-width:0}
+    .rows .when{flex-shrink:0;max-width:40%;text-align:right;color:var(--muted);font-size:15.5px;font-variant-numeric:oldstyle-nums}
+    .rows .note{display:block;color:var(--muted);font-size:16px}
+    @media (max-width:560px){
+      .pub{grid-template-columns:1fr;gap:4px}
+      .rows li{flex-direction:column;gap:2px}
+      .rows .when{max-width:none;text-align:left}
+    }
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="navwrap">
-      <div class="brand">
-        <img src="https://github.com/SunMinqiu.png" alt="Minqiu Sun"/>
-        <span>Minqiu Sun</span>
+  <div class="page">
+    <aside class="side">
+      <div class="portrait">
+        <div class="photo"><div><img src="/assets/20231120.jpg" alt="Minqiu Sun"></div></div>
+        <p class="cn-name" lang="zh">孙敏求</p>
       </div>
-      <nav class="links">
-        <a href="#publications">Publications</a>
-        <!-- <a href="#awards">Awards</a> -->
-        <a href="#teaching">Teaching</a>
-        <a href="#service">Service</a>
-        <a href="#experience">Experience</a>
-        <a href="/assets/MinqiuSun_CV.pdf" target="_blank" rel="noopener">CV</a>
-              <a href="/performance.html">Performance</a>
-      </nav>
-    </div>
-  </div>
-  <main class="container">
-    <header>
-      <img src="/assets/20231120.jpg" alt="Minqiu Sun" class="header-photo">
-      <div class="header-content">
-        <h1>Minqiu Sun · 孙敏求</h1>
-        <p class="subtitle">Ph.D. Student · University of Delaware — Systems for AI, Large Language Models</p>
-        <p class="email"><a href="mailto:mqsun@udel.edu">mqsun@udel.edu</a> · Newark, DE · <a href="https://github.com/SunMinqiu" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/minqiu-sun-056304318" target="_blank" rel="noopener">LinkedIn</a></p>
-      </div>
-    </header>
-
-    <section id="about">
-      <h2>Biography</h2>
-      <p>
-        I am a Ph.D. student in Computer & Information Sciences at the University of Delaware, advised by Prof. <a href="https://daidong.github.io/" target="_blank" rel="noopener">Dong Dai</a>. My research focuses on <b>Systems for AI</b> and <b>Large Language Models</b>.
+      <h1 class="name">Minqiu Sun</h1>
+      <p class="role">Ph.D. Student<br/>University of Delaware</p>
+      <p class="contact">
+        <a href="mailto:mqsun@udel.edu">mqsun@udel.edu</a><br/>
+        <span>Newark, DE</span><br/>
+        <a href="https://github.com/SunMinqiu" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/minqiu-sun-056304318" target="_blank" rel="noopener">LinkedIn</a> · <a href="/assets/MinqiuSun_CV.pdf" target="_blank" rel="noopener">CV</a>
       </p>
-    </section>
-
-
-    <section id="publications">
-      <h2>Publications</h2>
-      <article class="publication">
-        <div class="venue">SC'26</div>
-        <div>
-          <h3>ZOCheck: CPU-Shadow Checkpointing for Zeroth-Order LLM Fine-Tuning <span class="code-link">[<a href="https://github.com/DIR-LAB/ZOCheck" target="_blank" rel="noopener">Code</a>]</span></h3>
-          <p class="authors"><b>Minqiu Sun</b>, Xin Huang, Luanzheng Guo, Nathan R. Tallent, Kento Sato, Dong Dai.</p>
-        </div>
-      </article>
-
-      <article class="publication">
-        <div class="venue">CLUSTER'26</div>
-        <div>
-          <h3>LayerCheck: Adaptive Layer-wise Checkpointing for Large Language Model Post-training <span class="code-link">[<a href="https://github.com/DIR-LAB/LayerCheck" target="_blank" rel="noopener">Code</a>]</span></h3>
-          <p class="authors"><b>Minqiu Sun</b>, Xin Huang, Luanzheng Guo, Nathan R. Tallent, Kento Sato, Dong Dai.</p>
-        </div>
-      </article>
-
-      <article class="publication">
-        <div class="venue">IPDPS'26<br/>Ph.D. Forum</div>
-        <div>
-          <h3>Optimizer-Aware Checkpointing for Efficient Fault Tolerance in LLM Post-Training</h3>
-          <p class="authors"><b>Minqiu Sun</b>, Dong Dai.</p>
-        </div>
-      </article>
-
-      <article class="publication">
-        <div class="venue">PDSW'25 @ SC'25</div>
-        <div>
-          <h3>LLMTailor: A Layer-wise Tailoring Tool for Efficient Checkpointing of Large Language Models <span class="code-link">[<a href="https://github.com/SunMinqiu/LLMTailor" target="_blank" rel="noopener">Code</a>]</span></h3>
-          <p class="authors"><b>Minqiu Sun</b>, Xin Huang, Luanzheng Guo, Nathan Tallent, Kento Sato, Dong Dai.</p>
-        </div>
-      </article>
-
-    </section>
-
-    <section id="awards">
-      <h2>Awards</h2>
-      <ul>
-        <li><b>TCPP/TCHPC HPCSC 25–26 Travel Award, $1200</b> (2025–2026)</li>
-        <!-- <li><b>Meritorious Winner, Mathematical Contest in Modeling (MCM)</b> (2023) — Team leader; LSTM to forecast daily Wordle player counts; XGBoost to evaluate difficulty.</li>
-        <li><b>First Prize Scholarship</b>, NUIST (2021–2024); <b>Merit Student</b>, NUIST (2020–2024)</li> -->
+      <ul class="nav">
+        <li><a href="#about">Biography <small>简介</small></a></li>
+        <li><a href="#publications">Publications <small>发表</small></a></li>
+        <li><a href="#awards">Awards <small>获奖</small></a></li>
+        <li><a href="#teaching">Teaching <small>教学</small></a></li>
+        <li><a href="#service">Service <small>服务</small></a></li>
+        <li><a href="#experience">Experience <small>履历</small></a></li>
+        <li class="sep" aria-hidden="true"></li>
+        <li><a href="/performance.html">Performance <small>演出</small></a></li>
       </ul>
-    </section>
+    </aside>
 
-    <section id="teaching">
-      <h2>Teaching</h2>
-      <p>Teaching Assistant, <i>CISC663 Operating Systems</i>, University of Delaware (Jan 2026 – May 2026)</p>
-      <p>Teaching Assistant, <i>CISC361 Operating Systems</i>, University of Delaware (Aug 2025 – Dec 2025; Aug 2026 - Present)</p>
-      <p>Teaching Assistant, <i>Computer Science and Application</i>, Reading Academy, NUIST (2021 – 2022)</p>
-    </section>
+    <main>
+      <section id="about">
+        <h2>Biography <small>简介</small></h2>
+        <p>I am a Ph.D. student in Computer &amp; Information Sciences at the University of Delaware, advised by Prof. <a href="https://daidong.github.io/" target="_blank" rel="noopener">Dong Dai</a>. My research focuses on <b>Systems for AI</b> and <b>Large Language Models</b>. My work so far centers on efficient checkpointing and fault tolerance for LLM post-training. I am currently exploring system support for scientific workflows and LLM agent provenance.</p>
+      </section>
 
-    <section id="service">
-      <h2>Service</h2>
-      <p>Program Committee Member, AAAI Conference on Artificial Intelligence (AAAI), 2027</p>
-      <p>Student Volunteer, SC’25 (2025)</p>
-      <p>
-        President, Rock Band Association in NUIST (2021 – 2022) <br/>
-        I was in different bands on a lot of stages. Please see my <a href="/performance.html">Performance</a>.
-      </p>
-    </section>
+      <section id="publications">
+        <h2>Publications <small>发表</small></h2>
+        <article class="pub">
+          <div class="venue">SC'26</div>
+          <div>
+            <h3>ZOCheck: CPU-Shadow Checkpointing for Zeroth-Order LLM Fine-Tuning <span class="code">[<a href="https://github.com/DIR-LAB/ZOCheck" target="_blank" rel="noopener">Code</a>]</span></h3>
+            <p class="authors"><b>Minqiu Sun</b>, Xin Huang, Luanzheng Guo, Nathan R. Tallent, Kento Sato, Dong Dai.</p>
+          </div>
+        </article>
+        <article class="pub">
+          <div class="venue">CLUSTER'26</div>
+          <div>
+            <h3>LayerCheck: Adaptive Layer-wise Checkpointing for Large Language Model Post-training <span class="code">[<a href="https://github.com/DIR-LAB/LayerCheck" target="_blank" rel="noopener">Code</a>]</span></h3>
+            <p class="authors"><b>Minqiu Sun</b>, Xin Huang, Luanzheng Guo, Nathan R. Tallent, Kento Sato, Dong Dai.</p>
+          </div>
+        </article>
+        <article class="pub">
+          <div class="venue">IPDPS'26<br/>Ph.D. Forum</div>
+          <div>
+            <h3>Optimizer-Aware Checkpointing for Efficient Fault Tolerance in LLM Post-Training</h3>
+            <p class="authors"><b>Minqiu Sun</b>, Dong Dai.</p>
+          </div>
+        </article>
+        <article class="pub">
+          <div class="venue">PDSW'25<br/>@ SC'25</div>
+          <div>
+            <h3>LLMTailor: A Layer-wise Tailoring Tool for Efficient Checkpointing of Large Language Models <span class="code">[<a href="https://github.com/SunMinqiu/LLMTailor" target="_blank" rel="noopener">Code</a>]</span></h3>
+            <p class="authors"><b>Minqiu Sun</b>, Xin Huang, Luanzheng Guo, Nathan Tallent, Kento Sato, Dong Dai.</p>
+          </div>
+        </article>
+      </section>
 
-    <section id="experience">
-      <h2>Academic Experience</h2>
-      <p><b>ResearchAssistant</b> at University of Delaware (Sep 2024 – Aug 2025).</p>
-      <h2>Industry Experience</h2>
-      <p><b>Data Analysis Intern</b> at Accenture (China) Co., Ltd. (Aug 2023 – Nov 2023).</p>
-    </section>
+      <section id="awards">
+        <h2>Awards <small>获奖</small></h2>
+        <ul class="rows">
+          <li><span class="what">Department Travel Award for Outstanding Conference Publications, $2500</span><span class="when">2026</span></li>
+          <li><span class="what">TCPP/TCHPC HPCSC 25–26 Travel Award, $1200</span><span class="when">2025–2026</span></li>
+          <!-- <li><span class="what">Meritorious Winner, Mathematical Contest in Modeling (MCM)<span class="note">Team leader; LSTM to forecast daily Wordle player counts; XGBoost to evaluate difficulty.</span></span><span class="when">2023</span></li>
+          <li><span class="what">First Prize Scholarship, NUIST (2021–2024); Merit Student, NUIST (2020–2024)</span><span class="when">2020–2024</span></li> -->
+        </ul>
+      </section>
 
-    <footer style="margin-top:56px;color:var(--muted)">Updated Aug 2026 · © Minqiu Sun</footer>
-  </main>
+      <section id="teaching">
+        <h2>Teaching <small>教学</small></h2>
+        <ul class="rows">
+          <li><span class="what">Teaching Assistant, <i>CISC663 Operating Systems</i><span class="note">University of Delaware</span></span><span class="when">Jan 2026 – May 2026</span></li>
+          <li><span class="what">Teaching Assistant, <i>CISC361 Operating Systems</i><span class="note">University of Delaware</span></span><span class="when">Aug 2025 – Dec 2025<br/>Aug 2026 – Present</span></li>
+          <li><span class="what">Teaching Assistant, <i>Computer Science and Application</i><span class="note">Reading Academy, NUIST</span></span><span class="when">2021 – 2022</span></li>
+        </ul>
+      </section>
+
+      <section id="service">
+        <h2>Service <small>服务</small></h2>
+        <ul class="rows">
+          <li><span class="what">Program Committee Member, AAAI Conference on Artificial Intelligence (AAAI)</span><span class="when">2027</span></li>
+          <li><span class="what">Student Volunteer, SC’25</span><span class="when">2025</span></li>
+          <li><span class="what">President, Rock Band Association in NUIST<span class="note">I was in different bands on a lot of stages. Please see my <a href="/performance.html">Performance</a>.</span></span><span class="when">2021 – 2022</span></li>
+        </ul>
+      </section>
+
+      <section id="experience">
+        <h2>Experience <small>履历</small></h2>
+        <h3 class="sub">Academic</h3>
+        <ul class="rows">
+          <li><span class="what">Research Assistant<span class="note">University of Delaware</span></span><span class="when">Sep 2024 – Aug 2025</span></li>
+        </ul>
+        <h3 class="sub">Industry</h3>
+        <ul class="rows">
+          <li><span class="what">Data Analysis Intern<span class="note">Accenture (China) Co., Ltd.</span></span><span class="when">Aug 2023 – Nov 2023</span></li>
+        </ul>
+      </section>
+
+      <footer>Updated Nov 2026 · © Minqiu Sun</footer>
+    </main>
+  </div>
+  <script>
+    (function(){
+      var secs=[].slice.call(document.querySelectorAll('main section[id]'));
+      var links={};
+      document.querySelectorAll('.nav a[href^="#"]').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
+      var ticking=false;
+      function update(){
+        ticking=false;
+        var cur=secs[0].id,line=innerHeight*0.35;
+        secs.forEach(function(s){if(s.getBoundingClientRect().top<=line)cur=s.id});
+        if(innerHeight+scrollY>=document.documentElement.scrollHeight-2)cur=secs[secs.length-1].id;
+        Object.keys(links).forEach(function(k){links[k].classList.toggle('on',k===cur)});
+      }
+      addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(update)}},{passive:true});
+      addEventListener('resize',update);
+      update();
+    })();
+  </script>
 </body>
 </html>
